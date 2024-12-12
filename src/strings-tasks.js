@@ -385,11 +385,14 @@ function reverseWords(str) {
  */
 function invertCase(str) {
   let invertStr = '';
-  for (let i = 0; i <= str.length; i += 1) {
-    if (str[i] === str[i].toUpperCase()) {
-      invertStr += str[i].toLowerCase();
+  for (let i = 0; i < str.length; i += 1) {
+    const char = str[i];
+    if (char >= 'A' && char <= 'Z') {
+      invertStr += char.toLowerCase();
+    } else if (char >= 'a' && char <= 'z') {
+      invertStr += char.toUpperCase();
     } else {
-      invertStr += str[i].toUpperCase();
+      invertStr += char;
     }
   }
   return invertStr;
